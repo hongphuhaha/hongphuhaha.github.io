@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login to Smart home</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>		
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script type = "text/javascript">
+		function Redirect() {
+			 window.location="https://nguyenhongphu2k.github.io/index.html";
+		  }
+	   function validateForm()  {
+		  // var u = document.getElementById("username").value;
+		  // var p = document.getElementById("password").value;
+
+		  var u = document.getElementById("loginUser").value;
+		 var p = document.getElementById("loginPwd").value;
+	 
+		   if(u== "") {
+			   alert("Vui lòng nhập tên đăng nhập");
+			   return false;
+		   }
+		   if(p== "") {
+			   alert("Vui lòng nhập mật khẩu");
+			   return false;
+		   }
+		   if(u == "hongphu") {
+			  
+			  // window.location="https://nguyenhongphu2k.github.io/index.html";
+			  if(p =="301020"){
+				  alert("Đăng nhập thành công");
+			  Redirect() ;
+			   return false;}
+			   else{
+				  alert("Mật khẩu không đúng vui lòng nhập lại")
+			   }
+		   }
+			else{
+			  alert("Tên đăng nhập không đúng vui lòng nhập lại")
+			}
+		   
+
+		   //return true;
+	   
+	  }
+	</script>
+</head>
+<body>
+	<div class="login-wrapper">
+		<form action="" method="GET" onsubmit = "return validateForm()" class="form">
+			<img src="image/avatar1.png" alt="">
+			<h2>Đăng nhập</h2>
+			<div class="input-group">
+				<input type="text" name="loginUser" id="loginUser" required>
+				<label for="loginUser">Tên đăng nhập</label>
+			</div>
+			<div class="input-group">
+				<input type="password" name="loginPwd" id="loginPwd" required>
+				<label for="loginPwd">Mật khẩu</label>
+			</div>
+			<input type="submit" value="đăng nhập" class="submit-btn"><br/><br/>
+			
+		</form>
+		
+		<div id="forgot-pwd">
+			<form action="" class="form">
+				<a href="#" class="close">&times;</a>
+				<h2>Đặt lại mật khẩu</h2>
+				<div class="input-group">
+					<input type="email" name="email" id="email" required>
+					<label for="email">Nhập Email</label>
+				</div>
+				<input type="submit" value="Submit" class="submit-btn">
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
+
